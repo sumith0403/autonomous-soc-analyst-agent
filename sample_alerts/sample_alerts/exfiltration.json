@@ -1,0 +1,15 @@
+{
+  "alert_id": "ALT-2024-003",
+  "timestamp": "2024-01-15T16:45:00Z",
+  "source_ip": "10.0.0.15",
+  "destination_ip": "198.51.100.77",
+  "destination_port": 443,
+  "bytes_transferred": 524288000,
+  "protocol": "HTTPS",
+  "event_type": "data_exfiltration",
+  "rule_id": "31101",
+  "rule_description": "Large outbound data transfer to unknown external IP",
+  "severity": 14,
+  "hostname": "finance-pc-02",
+  "agent_name": "windows-endpoint-02"
+}

@@ -1,0 +1,40 @@
+PLAYBOOK: Ransomware Detection Response
+Tactic: Impact | Technique: T1486
+
+IMMEDIATE ACTIONS (0-15 minutes):
+1. ISOLATE affected system from network IMMEDIATELY
+2. Do NOT shut down — preserve memory for forensics
+3. Preserve volatile data: running processes, network connections
+4. Alert security leadership and management
+5. Activate incident response team
+
+INVESTIGATION:
+1. Identify ransomware family using file extension and ransom note
+2. Check VirusTotal for hash of suspicious executables
+3. Identify patient zero — which host was first infected
+4. Determine initial access vector (phishing? RDP? USB?)
+5. Check for lateral movement to other systems
+
+CONTAINMENT:
+1. Disconnect affected host from network (pull cable or disable NIC)
+2. Block C2 IPs/domains at firewall
+3. Disable SMB if spreading via network shares
+4. Revoke compromised credentials
+
+ERADICATION:
+1. Do NOT pay ransom without legal/executive approval
+2. Restore from clean, verified backups
+3. Rebuild system from scratch if no clean backup
+4. Patch the initial access vulnerability
+
+RECOVERY:
+1. Verify backup integrity before restoration
+2. Restore systems in priority order (critical first)
+3. Monitor restored systems for re-infection
+4. Update EDR/AV signatures
+
+LEGAL/COMPLIANCE:
+1. Report to management within 1 hour
+2. Preserve all evidence for forensics
+3. Check regulatory reporting requirements (GDPR, HIPAA)
+4. Consider law enforcement notification

@@ -1,0 +1,40 @@
+PLAYBOOK: SSH Brute Force Attack Response
+Tactic: Credential Access | Technique: T1110
+
+IMMEDIATE ACTIONS (0-15 minutes):
+1. Block source IP at firewall immediately
+2. Check if any successful logins occurred from this IP
+3. Review auth logs: /var/log/auth.log or /var/log/secure
+4. Check for new user accounts created around attack time
+5. Verify targeted account is not compromised
+
+INVESTIGATION STEPS:
+1. Run: grep "Failed password" /var/log/auth.log | grep <source_ip>
+2. Check for successful auth: grep "Accepted" /var/log/auth.log
+3. Look for lateral movement from targeted host
+4. Check bash history on targeted account
+5. Review cron jobs and startup scripts for persistence
+
+CONTAINMENT:
+1. Block IP in iptables: iptables -I INPUT -s <IP> -j DROP
+2. If account compromised: passwd -l <username>
+3. Kill active sessions: pkill -u <username>
+4. Enable fail2ban if not already active
+
+ERADICATION:
+1. Remove any new unauthorized user accounts
+2. Remove any new SSH keys added to authorized_keys
+3. Patch any exploited services
+4. Update fail2ban rules
+
+RECOVERY:
+1. Unlock legitimate accounts after verification
+2. Reset compromised passwords
+3. Review and update firewall rules
+4. Enable MFA on SSH
+
+INDICATORS OF COMPROMISE:
+- 500+ failed SSH attempts from single IP
+- Successful login after many failures
+- New cron jobs or startup services
+- New user accounts or SSH keys

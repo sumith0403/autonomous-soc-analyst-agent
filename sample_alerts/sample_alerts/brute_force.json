@@ -1,0 +1,16 @@
+{
+  "alert_id": "ALT-2024-001",
+  "timestamp": "2024-01-15T14:32:00Z",
+  "source_ip": "185.220.101.45",
+  "destination_ip": "10.0.0.5",
+  "destination_port": 22,
+  "protocol": "TCP",
+  "event_type": "brute_force",
+  "rule_id": "5763",
+  "rule_description": "SSH brute force attack",
+  "failed_attempts": 523,
+  "username_tried": "root",
+  "severity": 12,
+  "hostname": "prod-server-01",
+  "agent_name": "linux-endpoint-01"
+}
