@@ -1,0 +1,15 @@
+streamlit
+pandas
+plotly
+chromadb
+langchain
+langchain-openai
+langgraph
+openai
+python-dotenv
+requests
+sqlalchemy
+fastapi
+uvicorn
+aiohttp
+pydantic
