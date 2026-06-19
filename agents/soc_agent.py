@@ -1,5 +1,5 @@
 from langchain_openai import ChatOpenAI
-from langchain.schema import SystemMessage, HumanMessage
+from langchain_core.messages import SystemMessage, HumanMessage
 from ingestion.alert_parser import ParsedAlert
 from triage.mitre_mapper import MitreMapper
 from threat_intel.virustotal import VirusTotalClient

@@ -1,11 +1,11 @@
 streamlit
 pandas
 plotly
-chromadb
 langchain
+langchain-core
 langchain-openai
-langgraph
 openai
+chromadb
 python-dotenv
 requests
 sqlalchemy
